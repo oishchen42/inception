@@ -1,9 +1,8 @@
 #!/bin/sh
 
+chown -R mysql:mysql /var/lib/mysql
+
 if [ ! -d "/var/lib/mysql/mysql" ]; then
-
-        chown -R mysql:mysql /var/lib/mysql
-
         # init database
         mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --rpm
 
@@ -32,5 +31,5 @@ EOF
         /usr/bin/mysqld --user=mysql --bootstrap < /tmp/create_db.sql
         rm -f /tmp/create_db.sql
 fi
-
+cd /var/lib/mysql
 exec /usr/bin/mysqld --user=mysql --skip-log-error --datadir=/var/lib/mysql

@@ -1,4 +1,5 @@
 #!/bin/sh
+cd /var/www
 if [ ! -f "/var/www/wp-config.php" ]; then
         echo "Empty volume detected. Downloading WordPress..."
 

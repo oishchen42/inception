@@ -27,7 +27,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
     rm -f /var/cache/apk/*
 WORKDIR /var/www
 
-COPY ./requirements/wordpress/conf/wp-config-create.sh .
-RUN chmod +x wp-config-create.sh
-ENTRYPOINT ["sh", "wp-config-create.sh"]
+COPY ./requirements/wordpress/conf/wp-config-create.sh /usr/local/bin/wp-config-create.sh
+RUN chmod +x /usr/local/bin/wp-config-create.sh
+ENTRYPOINT ["sh", "/usr/local/bin/wp-config-create.sh"]
 
