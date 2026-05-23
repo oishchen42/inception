@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: requirements/nginx/Dockerfile
+    image: nginx
     container_name: nginx
     depends_on:
       - wordpress
@@ -26,6 +27,7 @@ services:
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
+    image: mariadb
     container_name: mariadb
     ports:
       - "3306:3306"
@@ -48,6 +50,7 @@ services:
         DB_NAME: ${DB_NAME}
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
+    image: wordpress
     container_name: wordpress
     depends_on:
       - mariadb

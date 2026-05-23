@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by oishchen*
+
 # 🌐 Inception
 
 A system administration and infrastructure project designed to broaden knowledge of Docker, system isolation, and service orchestration. This project deploys a secure, multi-container web architecture strictly utilizing Alpine Linux and a custom Makefile execution environment.
@@ -53,7 +55,6 @@ Total Annihilation (Hard Reset):
 Bash
 make fclean
 (WARNING: This stops all containers, prunes the Docker system, and physically deletes all database and website data from the host machine's hard drive).
-```
 
 ##Debug:
 
@@ -97,3 +98,6 @@ To inspect the newtors:
 SHOW DATABASES;
 SHOW TABLES;
 USE user_name (check .env)
+
+## Container interaction
+In order to go inside a container and run anything , one would need to do: `docker exec -it container_name sh` | `docker exec -it nginx kill -9 1`
